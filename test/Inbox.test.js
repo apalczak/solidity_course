@@ -1,11 +1,13 @@
 const assert = require("assert");
 const genache = require("ganache-cli");
 const Web3 = require("web3");
-const web3 = new Web3(genache.provider());
+
 const { interface, bytecode } = require("../compile");
 
 const INITIAL_STRING = "Hello World!";
 const MESSAGE_TO_CHANGE = "Hi there!";
+
+const web3 = new Web3(genache.provider());
 
 describe("Inbox", () => {
     let accounts;
