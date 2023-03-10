@@ -1,6 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
-const { abi, evm } = require("./compile.js");
+const { abi, evm } = require("./compileInbox.js");
 const { mnemonic, url } = require("./walletData.js");
 
 const provider = new HDWalletProvider(mnemonic, url);

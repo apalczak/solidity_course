@@ -2,16 +2,17 @@ const assert = require("assert");
 const genache = require("ganache-cli");
 const Web3 = require("web3");
 
-const { abi, evm } = require("../compile");
-
-const INITIAL_STRING = "Hello World!";
-const MESSAGE_TO_CHANGE = "Hi there!";
+const { abi, evm } = require("../compileInbox");
 
 const web3 = new Web3(genache.provider());
 
 describe("Inbox", () => {
+    const INITIAL_STRING = "Hello World!";
+    const MESSAGE_TO_CHANGE = "Hi there!";
+
     let accounts;
     let inbox;
+
     beforeEach(async () => {
         accounts = await web3.eth.getAccounts();
         inbox = await new web3.eth.Contract(abi)
